@@ -38,8 +38,8 @@ class PesquisaFormSchema(BaseModel):
 class PesquisaBuscaSchema(BaseModel):
     """ Representação da estrutura para busca das pesquisas dos participantes na lista restritiva que possam satisfazer os filtros opcionais da solicitação.
     """
-    data_pesquisa_inicial: datetime = datetime.now().strftime("%Y-%m-%d")
-    data_pesquisa_final: datetime   = datetime.now().strftime("%Y-%m-%d")
+    data_pesquisa_inicial: datetime = datetime.strptime(datetime.now().strftime("%Y-%m-%d"), "%Y-%m-%d")
+    data_pesquisa_final: datetime   = datetime.strptime(datetime.now().strftime("%Y-%m-%d"), "%Y-%m-%d")
     documento_participante: str = "CPF"
     num_doc_participante: str = ""
     
@@ -100,4 +100,4 @@ def apresenta_lista_pesquisas(pesquisas: List[ListaPesquisaSchema]):
             "num_doc_participante": pesquisa.Participante.num_doc_participante,        
         })
 
-    return {"status_listas": result}
+    return {"pesquisas": result}

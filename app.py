@@ -598,7 +598,7 @@ def post_lista_simulacao_pesquisas_listas_restritivas(form:PesquisaBuscaSchema):
         data_pesquisa_final     =   form.data_pesquisa_final;
         documento_participante  =   form.documento_participante
         num_doc_participante    =   form.num_doc_participante
-                
+
         # Instância um objeto da classe de acesso ao banco de dados
         objbdacesso = BdServico()
         
@@ -624,7 +624,7 @@ def post_lista_simulacao_pesquisas_listas_restritivas(form:PesquisaBuscaSchema):
         pesquisas   = objbdacesso.get_objeto_pesquisa_participantes_listas_restritivas(data_pesquisa_inicial, data_pesquisa_final, documento_participante, num_doc_participante)
         
         if not pesquisas:
-            return {"status_listas": []}, 200
+            return {"pesquisas": []}, 200
         
         # Retorna a representação lista de pesquisas dos participantes da lista restritiva cadastradas
         if pesquisas:
@@ -636,7 +636,6 @@ def post_lista_simulacao_pesquisas_listas_restritivas(form:PesquisaBuscaSchema):
         return apresenta_lista_pesquisas(pesquisas), 200
     
     except Exception as e:
-        print(f"##DEBUG## {e}")
         error_msg = "Ocorreu um erro na busca das simulações das pesquisas dos participantes da lista restritiva cadastrados."
         logger.warning(error_msg)
         return {"mesage": error_msg}, 400
