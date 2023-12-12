@@ -17,8 +17,8 @@ Adicionar uma novo participante da lista restritiva à base de dados.
 
 Layout
 
-  | CAMPO | TIPO | TAMANHO | DESCRICAO |
-| -- | --| --| --| --| --|
+| CAMPO | TIPO | TAMANHO | DESCRICAO |
+| -- | --| --| --|
 | id_class_participante  | integer|  | Id da classificação: 1 = PF 2 = PJ 
 | nome_participante| string|100  | Nome do participante da lista restritiva.
 | id_pais_doc_participante| integer|  | País do documento: 1 = BRASIL
@@ -33,7 +33,7 @@ Editar um participante da lista restritiva já cadastrado conforme  id do partic
 Layout
 
   | CAMPO | TIPO | TAMANHO | DESCRICAO |
-| -- | --| --| --| --| --|
+| -- | --| --| --|
 | id_participante | integer|  | Id do participante.
 | id_class_participante  | integer|  | Id da classificação: 1 = PF 2 = PJ 
 | nome_participante| string|100  | Nome do participante da lista restritiva.
@@ -49,7 +49,7 @@ Layout
 Remover um participante da lista restritiva do cadastro conforme id do participante.
 
   | CAMPO | TIPO | TAMANHO | DESCRICAO |
-| -- | --| --| --| --| --|
+| -- | --| --| --|
 | id_participante | integer|  | Id do participante.
 
 /ListarParticipantes	
@@ -57,7 +57,7 @@ POST
 Listar participante(s) da lista restritiva cadastrados que possam também satisfazer os filtros opcionais da solicitação.
 
   | CAMPO | TIPO | TAMANHO | DESCRICAO |
-| -- | --| --| --| --| --|
+| -- | --| --| --|
 | documento_participante| string| 10 | Documento do participante: "CPF" ou "CNPJ"
 | num_doc_participante| string| 14| Número do documento do participante.
 
@@ -75,7 +75,7 @@ POST
 Listar um ou todos os status relacionados aos identificadores da lista restritiva cadastrados.
 
   | CAMPO | TIPO | TAMANHO | DESCRICAO |
-| -- | --| --| --| --| --|
+| -- | --| --| --|
 | ident_lista_status| string| 15| Identificador da Lista: ""LISTA-PEP", "LISTA-SPC" OU "LISTA-SRF"
 
  3.Cadastrar e visualizar Simulações das Pesquisas dos Participantes da Lista Restritiva.
@@ -86,7 +86,7 @@ POST
 Adicionar uma nova simulação de pesquisa do participante da lista restritiva à base de dados.
 
   | CAMPO | TIPO | TAMANHO | DESCRICAO |
-| -- | --| --| --| --| --|
+| -- | --| --| --|
 | data_pesquisa| string| 10| data da pesquisa formato "YYYY-MM-DD".
 | documento_participante| string| 10 | Documento do participante: "CPF" ou "CNPJ"
 | id_pais_documento_participante| integer|  | País do documento: 1 = BRASIL
@@ -100,7 +100,7 @@ POST
 Listar simulações das pesquisas dos participantes da lista restritiva, que possam satisfazer os filtros de busca entre datas, sendo os demais filtros opcionais.
 
   | CAMPO | TIPO | TAMANHO | DESCRICAO |
-| -- | --| --| --| --| --|
+| -- | --| --| --|
 | data_pesquisa_final| string| 10| data da pesquisa inicial formato "YYYY-MM-DD". Campo obrigatório.
 | data_pesquisa_inicial| string| 10| data da pesquisa inicial formato "YYYY-MM-DD". Campo obrigatório.
 | documento_participante| string| 10 | Documento do participante: "CPF" ou "CNPJ"
