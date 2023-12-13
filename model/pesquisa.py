@@ -8,7 +8,7 @@ from model.base             import Base
 class Pesquisa(Base):
     __tablename__ = 'pesquisa'
 
-    numero_pesquisa             = Column(Integer,       primary_key=True)
+    numero_pesquisa             = Column(Integer,       primary_key=True, autoincrement=False,     nullable=False,  default=1)
     data_pesquisa               = Column(DateTime,      nullable=False)
     id_participante_pesquisa    = Column(Integer,       ForeignKey("participante.id_participante"),     nullable=False)
     id_status_lista_pesquisa    = Column(Integer,       ForeignKey("status_lista.id_status_lista"),     nullable=False)

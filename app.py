@@ -697,6 +697,8 @@ def adicionar_simulacao_pesquisa(form: PesquisaFormSchema):
         # refaz consulta com o novo registro cadastrado reconstruindo esquema de retorno
         objpesquisa = objbdacesso.get_objeto_pesquisa(numero_pesquisa)    
         
+        print(f"##debug 111 {objpesquisa} numero {numero_pesquisa}")
+        
         # Retorna apresentacao conforme schema PesquisaVisualizaSchema
         return apresenta_lista_pesquisa(objpesquisa), 200
     
@@ -706,6 +708,7 @@ def adicionar_simulacao_pesquisa(form: PesquisaFormSchema):
         logger.warning(f"Ocorreu um erro de integridade na base de dados : {error_msg}")
     except Exception as e:
         # Caso um erro fora do previsto
+        print(f"##debug {e}")
         error_msg = f"Não foi possível salvar nova simulação de Pesquisa da lista restritiva %s %s na base de dados." % (documento_participante, num_documento_participante)
         logger.warning(f"Erro na tentativa de adicionar nova pesquisa : {error_msg}")
         return {"mesage": error_msg}, 400    
